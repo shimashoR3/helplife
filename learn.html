@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        var answerList = [
+            "MCI"
+            ];
+
+            function showAnswer() {
+                var choiceNo = document.getElementById("choiceList").value;
+                document.getElementById("answer").innerHTML = "";
+                document.getElementById("answer").innerHTML += "正解は、「" + answerList + "」です。<br>";
+                document.getElementById("answer").innerHTML += "MCI(軽度認知障害)は認知症予備軍の段階です。MCIと診断された方の約半数が5年前後で認知症に発展するといわれています。この段階で、適切な治療や予防活動を行うことで、症状が回復したり、認知症への進展を遅延させたりすることができるので、早い段階で認知症の予防に取り組むことが非常に重要です。";
+            }
+    </script>
+</head>
+<body>
+	<h1>認知症クイズ(1)</h1>
+	<p>認知機能(記憶、物事の判断、実行など)に軽度の障害があるが、日常生活に支障をきたしていないグレーゾーンを何というか？</p>
+	<select id="choiceList">
+		<option value="0">MTTR</option>
+		<option value="1">FIT</option>
+		<option value="2">MCI</option>
+		<option value="3">MTBF</option>
+		<option value="4">MTTF</option>
+	</select>
+	<button onclick="showAnswer()">回答する</button>
+	<hr>
+	<p id="answer"></p>
+</body>
+</html>

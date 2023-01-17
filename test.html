@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function showProfile(){
+            //テキストボックスの入力値を取得
+            var name = document.getElementById("name")/value;
+            alert("名前:" + name);
+            //ドロップダウンメニューのうち選択されている値を取得
+            var language = document.getElementById("languageList").value;
+            alert("言語設定：" + language);
+        }
+
+        var answerList = [
+            "0～8点　問題なし　9～13点　要注意！　14～20点　要診断!!"
+            ];
+
+            function showAnswer() {
+                var choiceNo = document.getElementById("choiceList").value;
+                document.getElementById("answer").innerHTML = "";
+                document.getElementById("answer").innerHTML += "正解は、「" + answerList + "」です。<br>";
+                document.getElementById("answer").innerHTML += "0～8点　問題なしの場合は・・・<strong>物忘れも老化現象の範囲内。疲労やストレスによる場合もあります。8点に近かったら、また再チャレンジしてみましょう。</strong><br>9～13点　要注意！の場合は・・・<strong>家族に再チェックしてもらったり、数か月単位で再チェックを。認知症予防策を生活に取り入れてみてはいかがでしょうか。</strong><br>14～20点　要診断！！の場合は・・・<strong>認知症の初期症状が出ている可能性があります。家族にも再チェックしてもらい、結果が同じなら、医療機関を受診しましょう。</strong>";
+            }
+    </script>
+</head>
+<body>
+   
+	<h1>自己診断テスト</h1>
+    これは、ごく初期の認知症や、認知症に進展する可能性のある状態を、ご自分や家族などが簡単にチェックできるように考察されたものです。
+    <br>当てはまるものを選んでください。
+    <br>配点は左から　2点(頻繁にある) 1点(ときどきある) 0点(ほとんどない)　です。
+    <br><input type="checkbox"><input type="checkbox"><input type="checkbox">(1)同じ話を無意識に繰り返す<br>
+
+    <br><input type="checkbox"><input type="checkbox"><input type="checkbox">(2)知っている人の名前が思い出せない<br>
+    
+    <br><input type="checkbox"><input type="checkbox"><input type="checkbox">(3)物のしまい場所を忘れる<br>
+    
+    <br><input type="checkbox"><input type="checkbox"><input type="checkbox">(4)漢字を忘れる<br>
+    
+    <br><input type="checkbox"><input type="checkbox"><input type="checkbox">(5)今しようとしていることを忘れる<br>
+    
+    <br><input type="checkbox"><input type="checkbox"><input type="checkbox">(6)器具の取扱説明書を読むのが面倒<br>
+    
+    <br><input type="checkbox"><input type="checkbox"><input type="checkbox">(7)理由もないのに気がふさぐ<br>
+    
+    <br><input type="checkbox"><input type="checkbox"><input type="checkbox">(8)身だしなみに無関心である<br>
+    
+    <br><input type="checkbox"><input type="checkbox"><input type="checkbox">(9)外出がおっくうになった<br>
+    
+    <br><input type="checkbox"><input type="checkbox"><input type="checkbox">(10)物(財布など)が見つからないのを他人のせいにする<br>
+    
+    <br>各項目で当てはまるものを選んでください。
+	 <select id="choiceList">
+        <option value="0">0～8点　問題なし </option>
+		<option value="1">9～13点　要注意!</option>
+		<option value="2">14～20点　要診断!!</option>
+    </select>
+    <hr>
+    <p id="answer"></p>
+</body>
+</html>

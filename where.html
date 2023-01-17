@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.3.0/dist/leaflet.js"></script>
+  <script>
+    function init() {
+      var map = L.map('mapcontainer', { zoomControl: false });
+      var mpoint = [35.007241,138.364048];
+      map.setView(mpoint, 10);
+      L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
+      }).addTo(map);
+      //ポップアップする文字（HTML可、ここでは画像を表示）
+   
+        //熱海ちとせ病院
+        var sucontents = "静岡県熱海市泉17-1<br>(内科)診療時間は午前：9:00～11:30（受付時間は8時半から11時半）午後は14:00～16:30（午後は急患のみです）。<br>休養日は土曜日・祭日・年末年始となります。電話予約は<strong>0465-63-5881</strong>(月～金 9:00～17:00）です。<img src='https://cdn.job-medley.com/customers/image_files/converted_14c415a8-393d-4ff8-afdc-f4ce8519a751.jpg' width='250' height='250'>"
+        var popup1 = L.popup({ maxWidth: 350 }).setContent(sucontents);
+
+        //南あたみ第一病院
+       var sucontents = "静岡県熱海市下多賀477<br>(整形外科、外科、心療内科、泌尿器科、内科、リハビリテーション科) <br>診療時間は月曜日～金曜日が9:00～16:30　土曜日は9:00～11:30です（9:00～11:30 14:00～16:30 土曜AMのみ 科により異なる 臨時休診ありです）。<br>休養日は日曜日・祝日です。<img src='https://www.co-medical.com/file/client/20ed6fc969977395c2047441e6c6270d.jpg' width='250' height='250'>"
+       var popup2 = L.popup({ maxWidth: 300 }).setContent(sucontents);
+
+        //国際医療福祉大学熱海病院
+       var sucontents = "静岡県熱海市東海岸町13-1<br>(脳神経外科、外科、皮膚科、泌尿器科、リハビリテーション科、歯科口腔外科、形成外科、腎臓内科、産婦人科、消化器外科、神経内科、眼科、放射線科、精神科、呼吸器外科、小児科、心療内科、麻酔科、整形外科、耳鼻咽喉科、内科小児外科)<br>受付時間は午前8:30〜12:00　午後13:00〜16:30<br>診療時間が午前9:00〜13:00　午後14:00〜17:00となっています。<br>休養日は日曜日・祝日です。<img src='https://atami.iuhw.ac.jp/img/share.png' width='250' height='250'>"
+       var popup3 = L.popup({ maxWidth: 300 }).setContent(sucontents);
+
+       //熱海所記念病院
+       var sucontents = "静岡県熱海市昭和町20-20<br>(内科、外科、脳神経外科、整形外科、泌尿器科、皮膚科、小児科、婦人科、ペインクリニック、リハビリテーション科)受付時間は平日は8:30～12:00・ 13:30～16:30 土曜日が8:30～12:00 （救急患者は２４時間受付しております。 また予約特診外来もございますのでお尋ねください）。<br>診療時間は平日が9:00～12:00 ・14:00～16:30 土曜日は9:00～12:00 <img src='https://atami-tokoro.jp/wp-content/uploads/2016/07/keyv01.jpg' width='250' height='250'>"
+       var popup4 = L.popup({ maxWidth: 350 }).setContent(sucontents);
+
+       //フレンズ南熱海
+       var sucontents = "静岡県熱海市下多賀842-2<br>営業時間は9:00～17:00です。(勤労感謝の日は時間変更の可能性あり)<img src='https://www.fm-atami.net/_src/50643629/img20201202153443859195.jpg?v=1610090944395' width='250' height='250'>"
+       var popup5 = L.popup({ maxWidth: 300 }).setContent(sucontents);
+   
+       //ネオ・サミット湯河原
+       var sucontents = "静岡県熱海市泉17-2<br>営業時間は9:00～17:00です。(勤労感謝の日は時間変更の可能性あり)<img src='https://shizuoka-roujinhome.jp/wp-content/uploads/2018/04/P1020239-1.jpg' width='250' height='250'>"
+       var popup6 = L.popup({ maxWidth: 300 }).setContent(sucontents);
+   
+        //中銀ケアホテル熱海
+        var sucontents = "静岡県熱海市咲見町6-5<br>営業時間は9:00～17:00です。(勤労感謝の日は時間変更の可能性あり)<img src='https://shizuoka-roujinhome.jp/wp-content/uploads/2018/04/20180711-923-scaled.jpg' width='250' height='250'>"
+        var popup7 = L.popup({ maxWidth: 300 }).setContent(sucontents);
+
+        //ぽっかぽか・熱海館1号館
+        var sucontents = "静岡県熱海市西熱海町1-20-1<br>営業時間は8:30～17:30です。<img src='https://shizuoka-roujinhome.jp/wp-content/uploads/2018/04/P1020568.jpg' width='250' height='250'>"
+        var popup8 = L.popup({ maxWidth: 350 }).setContent(sucontents);
+
+        //ベストライフ熱海
+        var sucontents = "静岡県熱海市泉413-126<br>営業時間は9:00～18:00です。(勤労感謝の日は時間変更の可能性あり)<img src='https://bestlife.jp/facilities/shizuoka/atami/images/l01.jpg' width='250' height='250'>"
+        var popup9 = L.popup({ maxWidth: 350 }).setContent(sucontents);
+
+       
+
+       
+
+
+
+        L.marker([35.140249579420015,139.09791476781993,12]).bindPopup(popup1).bindTooltip("熱海ちとせ病院").addTo(map);
+
+       L.marker([35.04570782902603,139.08108494679004,12]).bindPopup(popup2).bindTooltip("南あたみ第一病院").addTo(map);
+
+       L.marker([35.10359840136,139.08351889841003,12]).bindPopup(popup3).bindTooltip("国際医療福祉大学熱海病院").addTo(map);
+
+       L.marker([35.091507536725985,139.06855600846006,12]).bindPopup(popup4).bindTooltip("熱海所記念病院").addTo(map);
+
+       L.marker([35.046149299999990,139.067949499999900]).bindPopup(popup5).bindTooltip("フレンズ南熱海").addTo(map);
+
+        L.marker([35.140322400000000,139.096445799999970]).bindPopup(popup6).bindTooltip("ネオ・サミット湯河原").addTo(map);
+
+        L.marker([35.09962955,139.0725838,16]).bindPopup(popup7).bindTooltip("中銀ケアホテル熱海").addTo(map);
+
+        L.marker([35.105169800000000,139.060530800000040]).bindPopup(popup8).bindTooltip("ぽっかぽか・熱海館1号館").addTo(map);
+
+        L.marker([35.134735500163,139.05811923828003,12]).bindPopup(popup9).bindTooltip("ベストライフ熱海").addTo(map);
+
+
+
+    }
+  </script>
+</head>
+  <body>
+<ons-page>
+   <div id="mapcontainer" style="position:absolute;top:0;left:0;right:0;bottom:0;"></div>
+<body onload="init()">
+</html>

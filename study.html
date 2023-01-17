@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        var answerList = [
+            "前頭側頭型認知症"
+            ];
+
+            function showAnswer() {
+                var choiceNo = document.getElementById("choiceList").value;
+                document.getElementById("answer").innerHTML = "";
+                document.getElementById("answer").innerHTML += "正解は、「" + answerList + "」です。<br>";
+                document.getElementById("answer").innerHTML +="レビー小体型認知症は認知症にかかった人の内、15％の確率で発症する認知症です。レビー小体型認知症の特徴的な症状は、・手足の動きが鈍くなり、歩行が小刻みで転びやすくなる(パーキンソン症状)・子供や虫が見えるなど、実際には存在しないものが見えるという(幻視)・日や時間によって症状の変動が大きいことや、気分や態度の変動が大きく、一見全く穏やかな状態から無気力状態、興奮、錯乱といった症状を一日の中でも繰り返したり、日中に惰眠をむさぼったりすることも経験されます。レビー小体型認知症の原因は、レビー小体という異常な蛋白を大脳皮質に広く認めます。レビー小体が現れる原因は脳の年齢的な変化と考えられています。脳の神経細胞が徐々に減っていき、特に記憶に関連した側頭葉と情報処理をする後頭葉が萎縮するため幻視が出やすいと考えられています。<br>レビー小体型認知症の方で注意が必要なのは転倒です。転倒を防ぐにはリハビリテーションや日常生活での散歩などで運動能力の衰えを遅らせることです。幻視については、本人は本当に見えている（ように脳が誤作動している）ため、「そんなことはない」と否定してはいけません。脳の病気でそのように見えることを理解し、非常に不安感が強い時は一人にしない、といった対応が必要です。";
+            }
+    </script>
+</head>
+<body>
+	<h1>認知症クイズ(4)</h1>
+	<p>手足の動きが鈍くなり"、歩行が小刻みで転びやすくなったり、子供や虫などの実際には存在しないものが見えるという(幻視)が発生したりするのはどれか？</p>
+	<select id="choiceList">
+		<option value="0">アルツハイマー型認知症</option>
+		<option value="1">脳血管性認知症</option>
+		<option value="2">前頭側頭型認知症</option>
+		<option value="3">レビー小体型認知症</option>
+	</select>
+	<button onclick="showAnswer()">回答する</button>
+	<hr>
+	<p id="answer"></p>
+</body>
+</html>
